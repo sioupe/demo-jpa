@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd" version="3.1">
-    <persistence-unit name="le_nom_de_votre_pu">
+    <persistence-unit name="demo-jpa">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <properties> <property name="jakarta.persistence.jdbc.url" value="votre_url_jdbc"/>
-            <property name="jakarta.persistence.jdbc.user" value="votre_user_db"/>
-            <property name="jakarta.persistence.jdbc.password" value="votre_mdp_db"/>
-            <property name="jakarta.persistence.jdbc.driver" value="votre_driver_jdbc"/>
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mariadb://localhost:3307/compta2"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties> </persistence-unit>
 </persistence>
