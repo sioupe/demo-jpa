@@ -11,12 +11,13 @@ public class Bibliotheque {
         em.getTransaction().begin();
         System.out.println(em);
 
-        Livre livre = new Livre(5,"Romeo et juliette","Shakespear");
+        Livre livre = new Livre("Romeo et juliette","Shakespear");
         em.persist(livre);
-        Livre l = em.find(Livre.class,5);
+        Livre l = em.find(Livre.class,1);
         if (l != null) {
             System.out.println(l);
         }
+        em.getTransaction().commit();
         em.close();
         emf.close();
     }

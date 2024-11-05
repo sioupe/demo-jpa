@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Table(name="livre")
 public class Livre implements Serializable {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
     @Column(name = "TITRE")
@@ -16,8 +17,8 @@ public class Livre implements Serializable {
     private String auteur;
 
 
-    public Livre(Integer id,String titre, String auteur) {
-        this.id=id;
+    public Livre(String titre, String auteur) {
+
         this.titre=titre;
         this.auteur=auteur;
 
