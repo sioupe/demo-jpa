@@ -10,11 +10,11 @@ public class Bibliotheque {
         EntityManager em = emf.createEntityManager();
         System.out.println(em);
 
-        Livre livre = new Livre(1);
+        Livre livre = new Livre(1,"Romeo et juliette");
         em.persist(livre);
         Livre l = em.find(Livre.class,1);
         if (l != null) {
-            System.out.println(l.getId());
+            System.out.println(l.getId()+" "+l.getNom());
         }
 
         em.close();
