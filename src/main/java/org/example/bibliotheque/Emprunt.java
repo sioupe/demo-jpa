@@ -26,7 +26,7 @@ public class Emprunt {
 
 
     public Emprunt(){
-        
+
     }
 
     public Emprunt(Client client, LocalDate dateDebut, LocalDate dateFin, int delai) {

@@ -17,6 +17,10 @@ public class Bibliotheque {
         if (l != null) {
             System.out.println(l);
         }
+        Emprunt e1 =em.find(Emprunt.class,1);
+        if (e1 != null) {
+            System.out.println(e1);
+        }
         em.getTransaction().commit();
         em.close();
         emf.close();
