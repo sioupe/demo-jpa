@@ -21,6 +21,8 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private Set<Emprunt> emprunts;
 
+
+
     public Client(){
         emprunts= new HashSet<Emprunt>();
 

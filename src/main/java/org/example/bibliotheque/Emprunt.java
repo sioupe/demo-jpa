@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import org.checkerframework.checker.units.qual.C;
 
 import java.time.LocalDate;
+import java.util.Set;
+
 @Entity
 @Table(name="emprunt")
 public class Emprunt {
@@ -24,6 +26,13 @@ public class Emprunt {
     @ManyToOne
     @JoinColumn(name = "ID_CLIENT")
     private Client client;
+
+    @ManyToMany
+    @JoinTable(name = "compo",
+        joinColumns = @JoinColumn(name = "ID_EMP",referencedColumnName = "ID"),
+        inverseJoinColumns = @JoinColumn(name = "ID_LIV",referencedColumnName = "ID")
+    )
+    private Set<Livre>livres;
 
 
     public Emprunt(){

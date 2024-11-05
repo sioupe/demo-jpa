@@ -3,6 +3,7 @@ package org.example.bibliotheque;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name="livre")
@@ -15,6 +16,8 @@ public class Livre implements Serializable {
     private String titre;
     @Column(name = "AUTEUR")
     private String auteur;
+    @ManyToMany(mappedBy = "livres")
+    private Set<Emprunt> emprunts;
 
 
     public Livre(){
