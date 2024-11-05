@@ -17,6 +17,9 @@ public class Livre implements Serializable {
     private String auteur;
 
 
+    public Livre(){
+
+    }
     public Livre(String titre, String auteur) {
 
         this.titre=titre;
