@@ -17,9 +17,14 @@ public class Bibliotheque {
         if (l != null) {
             System.out.println(l);
         }
-        Emprunt e1 =em.find(Emprunt.class,1);
+        Emprunt e1 =em.find(Emprunt.class,2);
         if (e1 != null) {
             System.out.println(e1);
+            System.out.println(e1.getLivres());
+        }
+        Client c1 = em.find(Client.class,3);
+        if (c1 != null) {
+            System.out.println(c1.getEmprunts());
         }
         em.getTransaction().commit();
         em.close();

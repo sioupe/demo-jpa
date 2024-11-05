@@ -22,6 +22,22 @@ public class Client {
     private Set<Emprunt> emprunts;
 
 
+    /**
+     * Getter
+     *
+     * @return emprunts
+     */
+
+    public Set<Emprunt> getEmprunts() {
+        return emprunts;
+    }
+
+    /**
+     * Getter
+     *
+     * @return emprunts
+     */
+
 
     public Client(){
         emprunts= new HashSet<Emprunt>();
@@ -30,11 +46,10 @@ public class Client {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Client{");
-        sb.append(", id=").append(id);
-        sb.append(", nom='").append(nom).append('\'');
-        sb.append(", prenom='").append(prenom).append('\'');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder("Client : ");
+
+        sb.append(" nom= ").append(nom).append('\'');
+        sb.append(" prenom= ").append(prenom).append('\'');
         return sb.toString();
     }
 

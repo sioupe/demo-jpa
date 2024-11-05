@@ -34,6 +34,15 @@ public class Emprunt {
     )
     private Set<Livre>livres;
 
+    /**
+     * Getter
+     *
+     * @return livres
+     */
+
+    public Set<Livre> getLivres() {
+        return livres;
+    }
 
     public Emprunt(){
 
@@ -48,13 +57,12 @@ public class Emprunt {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Emprunt{");
-        sb.append("client=").append(client);
-        sb.append(", id=").append(id);
-        sb.append(", dateDebut=").append(dateDebut);
-        sb.append(", dateFin=").append(dateFin);
-        sb.append(", delai=").append(delai);
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder("Emprunt =");
+        sb.append(client);
+        sb.append(" dateDebut= ").append(dateDebut);
+        sb.append(" dateFin= ").append(dateFin);
+        sb.append(" delai= ").append(delai).append(" jour \n");
+
         return sb.toString();
     }
 }
