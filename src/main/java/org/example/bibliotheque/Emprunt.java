@@ -1,9 +1,6 @@
 package org.example.bibliotheque;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.checkerframework.checker.units.qual.C;
 
 import java.time.LocalDate;
@@ -23,6 +20,19 @@ public class Emprunt {
     @Column(name = "DELAI")
     private int delai;
 
-    @Column(name = "ID_CLIENT")
-    private int idClient;
+    @ManyToOne
+    @JoinColumn(name = "ID_CLIENT")
+    private Client client;
+
+
+    public Emprunt(){
+        
+    }
+
+    public Emprunt(Client client, LocalDate dateDebut, LocalDate dateFin, int delai) {
+        this.client = client;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.delai = delai;
+    }
 }

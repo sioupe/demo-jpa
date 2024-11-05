@@ -1,9 +1,9 @@
 package org.example.bibliotheque;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Client {
     @Id
@@ -16,4 +16,17 @@ public class Client {
 
     @Column(name = "PRENOM")
     private String prenom;
+
+    @OneToMany(mappedBy = "client")
+    private Set<Emprunt> emprunts;
+
+    public Client(){
+        emprunts= new HashSet<Emprunt>();
+
+    }
+
+    public Client( String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
 }
