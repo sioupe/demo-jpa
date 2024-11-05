@@ -15,7 +15,7 @@ public class Bibliotheque {
         em.persist(livre);
         Livre l = em.find(Livre.class,5);
         if (l != null) {
-            System.out.println(l.getId()+" "+l.getTitre()+" "+l.getAuteur());
+            System.out.println(l);
         }
         em.close();
         emf.close();

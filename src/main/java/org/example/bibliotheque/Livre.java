@@ -52,4 +52,14 @@ public class Livre implements Serializable {
     public Integer getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Livre{");
+        sb.append("auteur='").append(auteur).append('\'');
+        sb.append(", id=").append(id);
+        sb.append(", titre='").append(titre).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
