@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 import org.checkerframework.checker.units.qual.C;
 
 import java.time.LocalDate;
-
+@Entity
+@Table(name="emprunt")
 public class Emprunt {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -34,5 +35,17 @@ public class Emprunt {
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
         this.delai = delai;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Emprunt{");
+        sb.append("client=").append(client);
+        sb.append(", id=").append(id);
+        sb.append(", dateDebut=").append(dateDebut);
+        sb.append(", dateFin=").append(dateFin);
+        sb.append(", delai=").append(delai);
+        sb.append('}');
+        return sb.toString();
     }
 }
