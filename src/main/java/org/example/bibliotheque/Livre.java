@@ -8,6 +8,7 @@ import java.io.Serializable;
 @Table(name="livre")
 public class Livre implements Serializable {
     @Id
+    @Column(name = "ID")
     private Integer id;
     @Column(name = "TITRE")
     private String titre;
