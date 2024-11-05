@@ -10,7 +10,7 @@ public class Bibliotheque {
         EntityManager em = emf.createEntityManager();
         System.out.println(em);
 
-        Livre livre = new Livre(1,"Romeo et juliette");
+        Livre livre = new Livre("Romeo et juliette");
         em.persist(livre);
         Livre l = em.find(Livre.class,1);
         if (l != null) {

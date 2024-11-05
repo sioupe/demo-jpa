@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 @Table(name="livre")
 public class Livre {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "titre")
+    @Column(name = "TITRE")
     private String nom;
 
 
-    public Livre(Integer id,String nom) {
-        this.id = id;
+    public Livre(String nom) {
         this.nom=nom;
     }
 
