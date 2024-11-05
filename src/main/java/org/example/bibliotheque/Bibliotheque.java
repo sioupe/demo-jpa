@@ -8,15 +8,15 @@ public class Bibliotheque {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("demo-jpa2");
         EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
         System.out.println(em);
 
-        Livre livre = new Livre("Romeo et juliette");
+        Livre livre = new Livre(5,"Romeo et juliette","Shakespear");
         em.persist(livre);
-        Livre l = em.find(Livre.class,1);
+        Livre l = em.find(Livre.class,5);
         if (l != null) {
-            System.out.println(l.getId()+" "+l.getNom());
+            System.out.println(l.getId()+" "+l.getTitre()+" "+l.getAuteur());
         }
-
         em.close();
         emf.close();
     }

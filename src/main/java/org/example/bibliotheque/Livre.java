@@ -2,18 +2,34 @@ package org.example.bibliotheque;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name="livre")
-public class Livre {
+public class Livre implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "TITRE")
-    private String nom;
+    private String titre;
+    @Column(name = "AUTEUR")
+    private String auteur;
 
 
-    public Livre(String nom) {
-        this.nom=nom;
+    public Livre(Integer id,String titre, String auteur) {
+        this.id=id;
+        this.titre=titre;
+        this.auteur=auteur;
+
+    }
+
+    /**
+     * Getter
+     *
+     * @return auteur
+     */
+
+    public String getAuteur() {
+        return auteur;
     }
 
     /**
@@ -22,8 +38,8 @@ public class Livre {
      * @return nom
      */
 
-    public String getNom() {
-        return nom;
+    public String getTitre() {
+        return titre;
     }
 
     /**
